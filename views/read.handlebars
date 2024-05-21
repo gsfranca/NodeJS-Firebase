@@ -1,0 +1,39 @@
+<p class="text-start fs-5">Consultar - Agendamento de Potenciais Clientes</p>
+<p class="text-start fs-6">Sistema Utilizado para agendamento de serviços.</p>
+<p>
+  <form action="/read" method="GET">
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">NOME</th>
+          <th scope="col">TELEFONE</th>
+          <th scope="col">ORIGEM</th>
+          <th scope="col">DATA DE CONTATO</th>
+          <th scope="col">OBSERVAÇÃO</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {{#each data}}
+            <tr>
+              <td>{{this.id}}</td>
+              <td>{{this.nome}}</td>
+              <td>{{this.telefone}}</td>
+              <td>{{this.origem}}</td>
+              <td>{{this.data_contato}}</td>
+              <td>{{this.observacao}}</td>
+              <td>
+                  <button class="btn btn-primary"><a href="/edit/{{id}}" style="color: inherit;">Editar</a></button>
+                  <button class="btn btn-danger"><a href="/delete/{{id}}" style="color: inherit;">Excluir</a></button>
+              </td>
+            </tr>
+        {{/each}}
+      </tbody>
+
+    </table>
+
+  </form>
+</p>
